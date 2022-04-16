@@ -6,7 +6,6 @@ Kernel repository that can be used to compile Armbian and OpenWer system.
 
 - The kernel files stored in the [pub/stable](pub/stable) directory is a stable version, suitable for use in a formal production environment.
 - The kernel files stored in the [pub/dev](pub/dev) directory is a development version, and third-party driver support and special modifications have been added for some specific devices, for development and testing use.
-- The kernel files stored in the [pub/eol](pub/eol) directory are the kernel series that have stopped updating and are used for nostalgia.
 
 ## Compile the kernel
 
