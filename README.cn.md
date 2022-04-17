@@ -18,7 +18,7 @@
   uses: ophub/amlogic-s9xxx-armbian@main
   with:
     build_target: kernel
-    kernel_version: 5.15.25_5.4.180
+    kernel_version: 5.15.25_5.10.100
     kernel_auto: true
     kernel_sign: -good-luck
 ```
