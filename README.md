@@ -20,7 +20,7 @@ Kernel repository that can be used to compile Armbian and OpenWer system. Kernel
     build_target: kernel
     kernel_version: 5.15.25_5.10.100
     kernel_auto: true
-    kernel_sign: -good-luck
+    kernel_sign: -ophub
 ```
 
 ## Use the kernel
