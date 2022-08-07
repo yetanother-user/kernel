@@ -27,9 +27,11 @@
     kernel_sign: -ophub
 ```
 
-## 鸣谢
+## 链接
 
 - [unifreq/kernel](https://github.com/unifreq)
+- [chewitt/linux](https://github.com/chewitt/linux)
+- [torvalds/linux](https://github.com/torvalds/linux)
 - [kernel.org](https://kernel.org)
 
 ## License

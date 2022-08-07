@@ -27,9 +27,11 @@ This kernel can be used in `Armbian` and `OpenWrt` systems. For example [amlogic
     kernel_sign: -ophub
 ```
 
-## Acknowledgments
+## Links
 
 - [unifreq/kernel](https://github.com/unifreq)
+- [chewitt/linux](https://github.com/chewitt/linux)
+- [torvalds/linux](https://github.com/torvalds/linux)
 - [kernel.org](https://kernel.org)
 
 ## License
