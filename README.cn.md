@@ -18,13 +18,13 @@
 - 内核的编译方法详见 [compile-kernel](https://github.com/ophub/amlogic-s9xxx-armbian/tree/main/compile-kernel), 使用 github.com 的 Actions 进行内核编译的模板可参考 [.github/workflows/compile-kernel.yml](https://github.com/ophub/amlogic-s9xxx-openwrt/blob/main/.github/workflows/compile-kernel.yml)。
 
 ```yaml
-- name: Compile the kernel for Amlogic s9xxx
+- name: Compile the kernel
   uses: ophub/amlogic-s9xxx-armbian@main
   with:
     build_target: kernel
-    kernel_version: 5.10.125_5.15.50
+    kernel_version: 5.10.135_5.15.50
     kernel_auto: true
-    kernel_sign: -ophub
+    kernel_sign: -yourname
 ```
 
 ## 链接

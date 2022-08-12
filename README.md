@@ -18,13 +18,13 @@ This kernel can be used in `Armbian` and `OpenWrt` systems. For example [amlogic
 - For the compilation method of the kernel, see [compile-kernel](https://github.com/ophub/amlogic-s9xxx-armbian/tree/main/compile-kernel), The template for kernel compilation using github.com's Actions can be found in [.github/workflows/compile-kernel.yml](https://github.com/ophub/amlogic-s9xxx-openwrt/blob/main/.github/workflows/compile-kernel.yml).
 
 ```yaml
-- name: Compile the kernel for Amlogic s9xxx
+- name: Compile the kernel
   uses: ophub/amlogic-s9xxx-armbian@main
   with:
     build_target: kernel
-    kernel_version: 5.10.125_5.15.50
+    kernel_version: 5.10.135_5.15.50
     kernel_auto: true
-    kernel_sign: -ophub
+    kernel_sign: -yourname
 ```
 
 ## Links
