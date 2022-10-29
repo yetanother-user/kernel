@@ -4,9 +4,10 @@ View Chinese description  |  [查看中文说明](README.cn.md)
 
 Kernel repository that can be used to compile Armbian and OpenWrt system. Kernel files with the `flippy` flag in their names are files made by [unifreq](https://github.com/unifreq), The files named by other names are the files I compiled using his kernel source code.
 
-- The kernel files stored in the [pub/stable](pub/stable) directory is a stable version, suitable for use in a formal production environment.
-- The kernel files stored in the [pub/dev](pub/dev) directory is a development version, and third-party driver support and special modifications have been added for some specific devices, for development and testing use.
-- The kernel files stored in the [pub/rock5b](pub/rock5b) directory are the dedicated kernels of `Radxa ROCK 5B(rk3588)`, which are not common to other devices.
+- The kernel files stored in the [pub/stable](pub/stable) directory is a `stable version`, suitable for use in a formal production environment.
+- The kernel files stored in the [pub/dev](pub/dev) directory is a `development version`, and third-party driver support and special modifications have been added for some specific devices, for development and testing use.
+- The kernel files stored in the [pub/rk3588](pub/rk3588) directory is a `special version` of the rk3588 series, which is suitable for devices such as Radxa 5B/E25, and is not common to other series.
+
 ## Use the kernel
 
 This kernel can be used in `Armbian` and `OpenWrt` systems. For example [amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian), [amlogic-s9xxx-openwrt](https://github.com/ophub/amlogic-s9xxx-openwrt), [flippy-openwrt-actions](https://github.com/ophub/flippy-openwrt-actions) and [unifreq/openwrt_packit](https://github.com/unifreq/openwrt_packit). It can be integrated when compiling firmware, or it can be installed into an existing system for use. For specific usage, please refer to [Kernel usage Instructions](https://github.com/ophub/amlogic-s9xxx-armbian/blob/main/compile-kernel/README.md#kernel-usage-instructions).
