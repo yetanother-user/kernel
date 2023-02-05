@@ -5,8 +5,10 @@ View Chinese description  |  [查看中文说明](README.cn.md)
 Kernel repository that can be used to compile Armbian and OpenWrt system. Kernel files with the `flippy` flag in their names are files made by [unifreq](https://github.com/unifreq), The files named by other names are the files I compiled using his kernel source code.
 
 - The kernel files stored in the [pub/stable](pub/stable) directory is a `stable version`, suitable for use in a formal production environment.
+- The kernel files stored in the [pub/rk3588](pub/rk3588) directory is a `special version` of the rk3588 series, which is suitable for devices such as Rock-5B and HinLink-H88K, and is not common to other series.
 - The kernel files stored in the [pub/dev](pub/dev) directory is a `development version`, and third-party driver support and special modifications have been added for some specific devices, for development and testing use.
-- The kernel files stored in the [pub/rk3588](pub/rk3588) directory is a `special version` of the rk3588 series, which is suitable for devices such as Radxa 5B/E25, and is not common to other series.
+- In [dev](https://github.com/ophub/kernel/releases/tag/dev) of Releases, there is a download image of the `cross-compilation toolchain` required for compiling the kernel.
+- In the [tools](https://github.com/ophub/kernel/releases/tag/tools) of Releases, there are some `Android system` download images of common TV boxes. When using Armbian and OpenWrt systems, you can use It is used to restore the Android system.
 
 ## Use the kernel
 
