@@ -8,6 +8,7 @@ Kernel repository that can be used to compile Armbian and OpenWrt system. Kernel
 - The kernel files stored in the [pub/rk3588](pub/rk3588) directory is a `special version` of the rk3588 series, which is suitable for devices such as Rock-5B and HinLink-H88K, and is not common to other series.
 - The kernel files stored in the [pub/h6](pub/h6) directory is a `special version` made by [13584452567](https://github.com/13584452567/linux-6.1.y) for the Allwinner H6 series, which is suitable for devices such as TQC-A01, and is not common to other series.
 - The kernel files stored in the [pub/dev](pub/dev) directory is a `development version`, and third-party driver support and special modifications have been added for some specific devices, for development and testing use.
+- In [kernel_stable](https://github.com/ophub/kernel/releases) of Releases, there are historical versions of some `stable` kernels.
 - In [dev](https://github.com/ophub/kernel/releases/tag/dev) of Releases, there is a download image of the `cross-compilation toolchain` required for compiling the kernel.
 - In the [tools](https://github.com/ophub/kernel/releases/tag/tools) of Releases, there are some `Android system` download images of common TV boxes. When using Armbian and OpenWrt systems, you can use It is used to restore the Android system.
 
