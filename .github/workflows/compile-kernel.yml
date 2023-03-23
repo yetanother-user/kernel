@@ -84,7 +84,6 @@ jobs:
           #sudo -E apt-get -y full-upgrade
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-          echo "KERNEL_TAG=$(echo ${{ inputs.kernel_version }} | awk -F '.' '{print $1"."$2".y"}')" >> ${GITHUB_ENV}
           sudo timedatectl set-timezone "${TZ}"
           echo "status=success" >> ${GITHUB_OUTPUT}
 
@@ -105,7 +104,7 @@ jobs:
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: kernel_stable_${{ env.KERNEL_TAG }}
+          tag: kernel_stable
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}

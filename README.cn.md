@@ -8,7 +8,7 @@
 - 在 [pub/rk3588](pub/rk3588) 目录下存储的内核文件是 rk3588 系列的`专用版本`，适合 Rock-5B 和 HinLink-H88K 等设备，和其他系列不通用。
 - 在 [pub/h6](pub/h6) 目录下存储的内核文件是 [13584452567](https://github.com/13584452567/linux-6.1.y) 为 Allwinner H6 系列制作的`专用版本`，适合 TQC-A01 等设备，和其他系列不通用。
 - 在 [pub/dev](pub/dev) 目录下存储的内核文件是`开发版`，为一些特定盒子添加了第三方的驱动支持和特殊修改，供开发和测试使用。
-- 在 Releases 的 [kernel_stable](https://github.com/ophub/kernel/releases) 里有一些 `stable` 内核的历史版本。
+- 在 Releases 的 [kernel_stable](https://github.com/ophub/kernel/releases/tag/kernel_stable) 里有一些 `stable` 内核的历史版本。
 - 在 Releases 的 [dev](https://github.com/ophub/kernel/releases/tag/dev) 里有编译内核时需要的`交叉编译工具链`下载镜像。
 - 在 Releases 的 [tools](https://github.com/ophub/kernel/releases/tag/tools) 里有一些常见的电视盒子的`安卓系统`下载镜像，在使用 Armbian 和 OpenWrt 系统时，可以用于恢复安卓系统使用。
 
