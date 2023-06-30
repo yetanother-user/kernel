@@ -1,10 +1,10 @@
 #==========================================================================
-# Description: Compile stable kernel
+# Description: Compile beta general kernel
 # Copyright (C) 2021 https://github.com/unifreq/openwrt_packit
 # Copyright (C) 2021 https://github.com/ophub/kernel
 #==========================================================================
 
-name: Compile stable kernel
+name: Compile beta general kernel
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ on:
       kernel_version:
         description: "Select kernel version"
         required: false
-        default: "5.15.1_6.1.1"
+        default: "6.1.1"
         type: choice
         options:
           - 5.4.1_5.10.1
@@ -42,6 +42,30 @@ on:
         options:
           - all
           - dtbs
+      kernel_config:
+        description: "Set the path of kernel .config"
+        required: false
+        default: "kernel-config/beta/general"
+        type: choice
+        options:
+          - kernel-config/beta/general
+          - false
+      kernel_patch:
+        description: "Set the directory for kernel patches"
+        required: false
+        default: "kernel-patch/beta"
+        type: choice
+        options:
+          - kernel-patch/beta
+          - false
+      auto_patch:
+        description: "Set whether to use kernel patches"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - true
+          - false
       kernel_toolchain:
         description: "Select the compilation toolchain"
         required: false
@@ -53,19 +77,11 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-ophub"
+        default: "-ophub-beta"
         type: choice
         options:
-          - -ophub
+          - -ophub-beta
           - -yourname
-      kernel_config:
-        description: "Set the path of kernel .config"
-        required: false
-        default: "kernel-config/release/general"
-        type: choice
-        options:
-          - kernel-config/release/general
-          - false
 
 env:
   TZ: America/New_York
@@ -109,12 +125,14 @@ jobs:
           kernel_toolchain: ${{ inputs.kernel_toolchain }}
           kernel_sign: ${{ inputs.kernel_sign }}
           kernel_config: ${{ inputs.kernel_config }}
+          kernel_patch: ${{ inputs.kernel_patch }}
+          auto_patch: ${{ inputs.auto_patch }}
 
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: kernel_stable
+          tag: kernel_beta
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
@@ -122,5 +140,5 @@ jobs:
             - The kernel can be used to compile Armbian and OpenWrt.
             - The kernel source code comes from: ${{ inputs.kernel_source }}
             - The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
-            - This is a `stable` kernel, which can be used in Armbian and OpenWrt.
-            - 这是`稳定版`内核，可以在 Armbian 和 OpenWrt 里使用。
+            - This is a `beta version` kernel, limited to testers only.
+            - 这是`测试版`内核，仅限测试人员使用。
