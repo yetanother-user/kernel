@@ -1,10 +1,10 @@
 #==========================================================================
-# Description: Compile rk3588 kernel
-# Copyright (C) 2023 https://github.com/unifreq/linux-5.10.y-rk35xx
-# Copyright (C) 2023 https://github.com/ophub/kernel
+# Description: Compile beta rk3588 kernel
+# Copyright (C) 2021 https://github.com/unifreq/openwrt_packit
+# Copyright (C) 2021 https://github.com/ophub/kernel
 #==========================================================================
 
-name: Compile rk3588 kernel
+name: Compile beta rk3588 kernel
 
 on:
   repository_dispatch:
@@ -37,29 +37,46 @@ on:
         options:
           - all
           - dtbs
+      kernel_config:
+        description: "Set the path of kernel .config"
+        required: false
+        default: "kernel-config/beta/rk3588"
+        type: choice
+        options:
+          - kernel-config/beta/rk3588
+          - false
+      kernel_patch:
+        description: "Set the directory for kernel patches"
+        required: false
+        default: "kernel-patch/beta"
+        type: choice
+        options:
+          - kernel-patch/beta
+          - false
+      auto_patch:
+        description: "Set whether to use kernel patches"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - true
+          - false
       kernel_toolchain:
         description: "Select the compilation toolchain"
         required: false
         default: "gcc"
         type: choice
         options:
+          - clang
           - gcc
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-rk3588"
+        default: "-ophub-beta-rk3588"
         type: choice
         options:
-          - -rk3588
+          - -ophub-beta-rk3588
           - -yourname
-      kernel_config:
-        description: "Set the path of kernel .config"
-        required: false
-        default: "kernel-config/release/rk3588"
-        type: choice
-        options:
-          - kernel-config/release/rk3588
-          - false
 
 env:
   TZ: America/New_York
@@ -103,12 +120,14 @@ jobs:
           kernel_toolchain: ${{ inputs.kernel_toolchain }}
           kernel_sign: ${{ inputs.kernel_sign }}
           kernel_config: ${{ inputs.kernel_config }}
+          kernel_patch: ${{ inputs.kernel_patch }}
+          auto_patch: ${{ inputs.auto_patch }}
 
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: kernel_rk3588
+          tag: kernel_beta_rk3588
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
@@ -116,5 +135,5 @@ jobs:
             - The kernel can be used to compile Armbian and OpenWrt.
             - The kernel source code comes from: ${{ inputs.kernel_source }}
             - The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
-            - This is a dedicated kernel for `Rockchip rk3588` and is not compatible with other series.
-            - 这是 `Rockchip rk3588` 专用内核，和其他系列不通用。
+            - This is a `beta version` kernel, limited to testers only.
+            - 这是`测试版`内核，仅限测试人员使用。
